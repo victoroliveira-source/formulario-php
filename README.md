@@ -14,7 +14,6 @@ Código criar formulário
         background: linear-gradient(to right, rgb(10, 9, 9), rgb(116, 22, 22));
         color: white;
     }
-
     .modelo{
         width: 340px;
         height: 685px;
@@ -61,11 +60,8 @@ Código criar formulário
             <br><br><br>
             <center><input type="submit" value="Enviar" name="acao"></center>
             <br><br> 
-
         </form>
-
         <?php
-
         if(isset ($_POST["acao"])) {
         $nome = $_POST['nome'];
         $email = $_POST['email'];
@@ -76,14 +72,10 @@ Código criar formulário
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
         $mensagem = $_POST['mensagem'];
-
         require "config.php";
-
         $result = mysqli_query($conexao, "INSERT INTO cliente (nome, email, telefone, sexo, nascimento, endereco, cidade, estado, mensagem)
         VALUES ('$nome', '$email', '$telefone', '$sexo', '$nasc', '$endereco', '$cidade', '$estado', '$mensagem')");
-
         header ("Location: formulario.php");
-
         exit;
         }
         ?>
